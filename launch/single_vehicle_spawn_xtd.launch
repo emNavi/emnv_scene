@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Posix SITL environment launch script -->
+    <!-- launchs PX4 SITL and spawns vehicle -->
+    <!-- vehicle pose -->
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="0"/>
+    <arg name="R" default="0"/>
+    <arg name="P" default="0"/>
+    <arg name="Y" default="0"/>
+    <!-- vehcile model and config -->
+    <arg name="sdf" default="plane"/>
+    <arg name="est" default="ekf2"/>
+    <arg name="vehicle" default="plane"/>
+    <arg name="ID" default="0"/>
+    <arg name="ID_in_group" default="0"/>
+    
+    <!-- px4中，etc/init.d-posix/airframes，文件夹的作用是存储特定飞行器框架（airframes）的配置脚本，这些脚本用于在仿真环境中初始化特定的飞行器模型。
+    在1.14版本以后，px4将airframes中的所有文件命名方式修改了，统一改为 仿真器前缀+飞行器名称（如gazebo-classic_iris），以便更好地识别和管理不同的飞行器配置。
+    而在1.13以及以前的版本中，该命名方式为 仅飞行器名称（如iris）。 -->
+    <!-- <env name="PX4_SIM_MODEL" value="$(arg vehicle)" /> -->
+    <env name="PX4_SIM_MODEL" value="gazebo-classic_$(arg vehicle)" />
+
+    <env name="PX4_ESTIMATOR" value="$(arg est)" />
+    <arg name="mavlink_udp_port" default="14560"/>
+    <arg name="mavlink_tcp_port" default="4560"/>
+    <!-- PX4 configs -->
+    <arg name="interactive" default="true"/>
+    <!-- generate sdf vehicle model -->
+    <arg name="cmd" default="xmlstarlet ed -d '//plugin[@name=&quot;mavlink_interface&quot;]/mavlink_tcp_port' -s '//plugin[@name=&quot;mavlink_interface&quot;]' -t elem -n mavlink_tcp_port -v $(arg mavlink_tcp_port) $(find px4)/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/$(arg sdf)/$(arg sdf).sdf"/>
+    <param command="$(arg cmd)" name="model_description"/>
+    <!-- PX4 SITL -->
+    <arg unless="$(arg interactive)" name="px4_command_arg1" value=""/>
+    <arg     if="$(arg interactive)" name="px4_command_arg1" value="-d"/>
+    <node name="sitl_$(arg ID)" pkg="px4" type="px4" output="screen" args="$(find px4)/ROMFS/px4fmu_common -s etc/init.d-posix/rcS -i $(arg ID) -w sitl_$(arg vehicle)_$(arg ID) $(arg px4_command_arg1)">
+    </node>
+    <!-- spawn vehicle -->
+    <node name="$(arg vehicle)_$(arg ID)_spawn" output="screen" pkg="gazebo_ros" type="spawn_model" args="-sdf -param model_description -model $(arg vehicle)_$(arg ID_in_group) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y)"/>
+</launch>
