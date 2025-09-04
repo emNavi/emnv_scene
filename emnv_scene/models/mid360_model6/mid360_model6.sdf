@@ -1,0 +1,89 @@
+<?xml version='1.0'?>
+<sdf version="1.6">
+  <model name="mid360_model6">
+    <!-- add lidars -->
+   <link name='livox_base'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.2</mass>
+        <inertia>
+          <ixx>0.02</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.02</iyy>
+          <iyz>0</iyz>
+          <izz>0.02</izz>
+        </inertia>
+      </inertial>
+      <collision name='livox_base_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://livox_mid40/meshes/livox_mid40.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='livox_base_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://livox_mid40/meshes/mid360_rules.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+
+      <sensor type="ray" name="laser_livox">
+        <pose>0 0 0.05 0 0 0</pose>
+        <visualize>false</visualize>
+        <always_on>True</always_on>
+        <update_rate>10</update_rate>
+        <!-- This ray plgin is only for visualization. -->
+        <plugin name="gazebo_ros_laser_controller" filename="liblivox_laser_simulation.so">
+			  <ray>
+			  <scan>
+				  <horizontal>
+				    <samples>360</samples>
+				    <resolution>1</resolution>
+				    <min_angle>-3.1415926535897931</min_angle>
+            <max_angle>3.1415926535897931</max_angle>
+				  </horizontal>
+				  <vertical>
+				    <samples>30</samples>
+				    <resolution>1</resolution>
+				    <min_angle>-1.046666667</min_angle>
+            <max_angle>1.046666667</max_angle>
+				  </vertical>
+			  </scan>
+			  <range>
+				  <min>0.1</min>
+				  <max>15</max>
+				  <resolution>1</resolution>
+			  </range>
+			  <noise>
+				  <type>gaussian</type>
+				  <mean>0.0</mean>
+				  <stddev>0.0</stddev>
+			  </noise>
+			  </ray>
+          <visualize>false</visualize>
+		      <samples>20000</samples>
+		      <downsample>4</downsample>
+		      <csv_file_name>mid360-real-centr6.csv</csv_file_name>
+          <publish_pointcloud_type>2</publish_pointcloud_type>
+		      <ros_topic>/livox/lidar6</ros_topic>
+          <frameName>base_link</frameName>
+        </plugin>
+      </sensor>
+
+    </link>
+
+
+
+
+  </model>
+</sdf>
