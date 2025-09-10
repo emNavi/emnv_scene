@@ -14,9 +14,9 @@ roslaunch emnv_scene gazebo.launch
 ```
 ## 运行emnavi_ctl_bridge  
 ```bash
-roslaunch emnv_ctl_bridge simple_gazebo_swarm.launch  
+roslaunch emnv_ctl_bridge simple_gazebo_swarm.launch
 ```
-## 暂未添加PX4的设置文件，可以在QGC内设置本地drone的定位输入源  
+暂未添加PX4的设置文件，可以在QGC内设置本地drone的定位输入源  
 
 # emnv_scene功能包文件目录  
 ```
