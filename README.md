@@ -3,6 +3,7 @@ Scenes and models resource for PX4 Gazebo SITL.
 
 # 添加工作空间和gazeo_mode模型路径  
 ```bash
+cd emnv_scene
 source scene_workspace.bash  
 ```
 
