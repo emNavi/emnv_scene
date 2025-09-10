@@ -1,0 +1,14 @@
+<launch>
+    <node name = "rosbag" pkg = "rosbag" type = "play" output = "screen" required="true" args="/home/emnavi/catkin_ws/za/2025-07-17-20-35-04.bag">
+        <!-- <arg = > -->
+        <remap from="/conn2x/filtered_points_1"   to="/filtered_points_1"/>
+        <remap from="/conn2x/local_map"           to="/local_map"/>
+        <remap from="/conn2x/multi_map_manager/chunk_stamps"   to="/multi_map_manager/chunk_stamps"/>
+        <remap from="/conn2x/planning/swarm_traj"              to="/planning/swarm_traj"/>
+        <remap from="/conn2x/pose_racer_1"                     to="/pose_racer_1"/>
+        <remap from="/conn2x/racer_1"                          to="/racer_1"/>
+        <remap from="/conn2x/sdf_map/occupancy_all_1"          to="/sdf_map/occupancy_all_1"/>
+        <remap from="/conn2x/swarm_expl/drone_state"           to="/swarm_expl/drone_state"/>
+        <remap from="/conn2x/swarm_expl/grid_tour_send"        to="/swarm_expl/grid_tour_send"/>
+    </node> 
+</launch>

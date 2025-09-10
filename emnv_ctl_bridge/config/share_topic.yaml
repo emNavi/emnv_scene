@@ -1,0 +1,80 @@
+netcard_name: "wlp6s0"  
+# 所有节点的通讯端口需要一致
+discover_port: 32946  # 发现端口
+zmq_pub_port: 32945  # zmq通讯端口
+# topic 仅能在 share sub pub 间选择一种，不能重复
+share_topic:
+  /drone_1/mavros/state:  "mavros_msgs/State"
+  /drone_2/mavros/state:  "mavros_msgs/State"
+  /drone_3/mavros/state:  "mavros_msgs/State"
+  /drone_4/mavros/state:  "mavros_msgs/State"
+
+  /drone_1/ctrl_bridge/bridge_status: "std_msgs/String"
+  /drone_2/ctrl_bridge/bridge_status: "std_msgs/String"
+  /drone_3/ctrl_bridge/bridge_status: "std_msgs/String"
+  /drone_4/ctrl_bridge/bridge_status: "std_msgs/String"
+# Racer共享数据
+  /swarm_expl/drone_state: "exploration_manager/DroneState"
+  /swarm_expl/grid_tour_send: "exploration_manager/GridTour"
+  /swarm_expl/hgrid_send: "exploration_manager/HGrid"
+  /swarm_expl/pair_opt: "exploration_manager/PairOpt"
+  /swarm_expl/pair_opt_res: "exploration_manager/PairOptResponse"
+  /multi_map_manager/chunk_data:  "plan_env/ChunkData"
+  /multi_map_manager/chunk_stamps:  "plan_env/ChunkStamps"
+  /planning/swarm_traj: "bspline/Bspline"
+# 地图块数据
+  /sdf_map/occupancy_all_1: "sensor_msgs/PointCloud2"
+  /sdf_map/occupancy_all_2: "sensor_msgs/PointCloud2"
+  /sdf_map/occupancy_all_3: "sensor_msgs/PointCloud2"
+  /sdf_map/occupancy_all_4: "sensor_msgs/PointCloud2"
+# 各自的点云
+  /filtered_points_1: "sensor_msgs/PointCloud2"
+  /filtered_points_2: "sensor_msgs/PointCloud2"
+  /filtered_points_3: "sensor_msgs/PointCloud2"
+  /filtered_points_4: "sensor_msgs/PointCloud2"
+# 各自的odom
+  /racer_1: "nav_msgs/Odometry"
+  /racer_2: "nav_msgs/Odometry"
+  /racer_3: "nav_msgs/Odometry"
+  /racer_4: "nav_msgs/Odometry"
+# 各自的pose           
+  /pose_racer_1:  "geometry_msgs/PoseStamped"
+  /pose_racer_2:  "geometry_msgs/PoseStamped"
+  /pose_racer_3:  "geometry_msgs/PoseStamped"
+  /pose_racer_4:  "geometry_msgs/PoseStamped"
+
+# Racer规划&&轨迹可视化
+  /planning_vis/trajectory_1: "visualization_msgs/Marker"
+  /planning_vis/trajectory_2: "visualization_msgs/Marker"
+  /planning_vis/trajectory_3: "visualization_msgs/Marker"
+  /planning_vis/trajectory_4: "visualization_msgs/Marker"
+  
+  /planning_vis/frontier_1: "visualization_msgs/Marker"
+  /planning_vis/frontier_2: "visualization_msgs/Marker"
+  /planning_vis/frontier_3: "visualization_msgs/Marker"
+  /planning_vis/frontier_4: "visualization_msgs/Marker"
+
+  /planning_vis/viewpoints_1: "visualization_msgs/Marker"
+  /planning_vis/viewpoints_2: "visualization_msgs/Marker"
+  /planning_vis/viewpoints_3: "visualization_msgs/Marker"
+  /planning_vis/viewpoints_4: "visualization_msgs/Marker"
+
+# 程序分辨 / 符号，请不要落下
+# zmq_pub_only_topic_prefix: "/drone1"
+# zmq_pub_only_topic:
+  # /pose_racer_1:  "geometry_msgs/PoseStamped"
+  # /ctrl_bridge/world_odom: "nav_msgs/Odometry"
+
+# zmq_sub_only_topic_prefix: "/drone0"
+# zmq_sub_only_topic:
+  # /pose_racer_1:  "geometry_msgs/PoseStamped"
+  # /ctrl_bridge/world_odom: "nav_msgs/Odometry"
+
+# source ~/emnavi/drone_team/devel/setup.bash
+# source ~/emnavi/X280/devel/setup.bash --extend
+# share_topic:
+  # /mavros/local_position/odom: "nav_msgs/Odometry"
+  # /mavros/imu/data: "sensor_msgs/Imu"
+  # /mavros/imu/mag: "sensor_msgs/MagneticField"
+  # /mavros/imu/static_transform: "geometry_msgs/TransformStamped"
+  # /mavros/local_position/pose:  "geometry_msgs/PoseStamped"

@@ -1,0 +1,176 @@
+<launch>
+    <arg name = "takeoff_height" default = "2.0"/>
+    <!-- RATE,ATTI,POSY  -->
+    <arg name = "ctrl_pub_level" default = "POSY"/>
+    <arg name = "ctrl_mode" default = "POSY"/>
+    <!-- MAVROS and vehicle configs -->
+    <node pkg="tf" type="static_transform_publisher" name="map_to_world" args="0 0 0 0 0 0 1 map world 100" />
+    <!-- <param name="use_sim_time" value="true"/> -->
+
+    <group ns="iris_1">
+    <param name = "use_sim_time" value="true"/>
+        <arg name="ID" value="0"/>
+        <arg name="fcu_url" default="udp://:2454$(arg ID)@localhost:3458$(arg ID)"/>
+        <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
+        <node name = "ctrl_bridge_$(arg ID)" pkg = "emnv_ctl_bridge" type = "ctrl_bridge" output = "screen" required="true">
+            <remap from="~pos_sp_cmd" to="/racer_1/setpoint_raw/local"/>
+            <remap from="~ref_odom" to="/iris_1/mavros/local_position/odom"/>
+            <param name ="enable_vel_transpose_b2w" value="true"/>
+            <param name ="enable_imu_dt_check" value="false"/>
+            <param name ="drone_config_path" value="$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
+            <param name ="drone_name" value="iris_1"/>
+            <param name ="takeoff_height" value="2"/>
+            <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
+            <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
+        </node>
+        <include file="$(find mavros)/launch/px4.launch" >
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(eval 1 + arg('ID'))"/>
+            <arg name="tgt_component" value="1"/>
+        </include>
+            <param name="swarm_racer_flage" value="1"/>
+            <param name="swarm_racer_id" value="1"/>
+    </group> 
+
+    <!-- <group ns="iris_2">
+    <param name = "use_sim_time" value="true"/>
+        <arg name="ID" value="1"/>
+        <arg name="fcu_url" default="udp://:2454$(arg ID)@localhost:3458$(arg ID)"/>
+        <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
+        <node name = "ctrl_bridge_$(arg ID)" pkg = "emnv_ctl_bridge" type = "ctrl_bridge" output = "screen" required="true">
+            <remap from="~pos_sp_cmd" to="/racer_2/setpoint_raw/local"/>
+            <remap from="~ref_odom" to="/iris_2/mavros/local_position/odom"/>
+            <param name ="enable_vel_transpose_b2w" value="true"/>
+            <param name ="enable_imu_dt_check" value="false"/>
+            <param name ="drone_config_path" value="$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
+            <param name ="drone_name" value="iris_2"/>
+            <param name ="takeoff_height" value="1"/>
+            <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
+            <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
+        </node>
+        <include file="$(find mavros)/launch/px4.launch" >
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(eval 1 + arg('ID'))"/>
+            <arg name="tgt_component" value="1"/>
+        </include>
+            <param name="swarm_racer_flage" value="1"/>
+            <param name="swarm_racer_id" value="2"/>
+    </group>     
+    
+    <group ns="iris_3">
+    <param name = "use_sim_time" value="true"/>
+        <arg name="ID" value="2"/>
+        <arg name="fcu_url" default="udp://:2454$(arg ID)@localhost:3458$(arg ID)"/>
+        <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
+        <node name = "ctrl_bridge_$(arg ID)" pkg = "emnv_ctl_bridge" type = "ctrl_bridge" output = "screen" required="true">
+            <remap from="~pos_sp_cmd" to="/racer_3/setpoint_raw/local"/>
+            <remap from="~ref_odom" to="/iris_3/mavros/local_position/odom"/>
+            <param name ="enable_vel_transpose_b2w" value="true"/>
+            <param name ="enable_imu_dt_check" value="false"/>
+            <param name ="drone_config_path" value="$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
+            <param name ="drone_name" value="iris_3"/>
+            <param name ="takeoff_height" value="1"/>
+            <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
+            <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
+        </node>
+        <include file="$(find mavros)/launch/px4.launch" >
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(eval 1 + arg('ID'))"/>
+            <arg name="tgt_component" value="1"/>
+        </include>
+            <param name="swarm_racer_flage" value="1"/>
+            <param name="swarm_racer_id" value="3"/>
+    </group> 
+
+    <group ns="iris_4">
+    <param name = "use_sim_time" value="true"/>
+        <arg name="ID" value="3"/>
+        <arg name="fcu_url" default="udp://:2454$(arg ID)@localhost:3458$(arg ID)"/>
+        <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
+        <node name = "ctrl_bridge_$(arg ID)" pkg = "emnv_ctl_bridge" type = "ctrl_bridge" output = "screen" required="true">
+            <remap from="~pos_sp_cmd" to="/racer_4/setpoint_raw/local"/>
+            <remap from="~ref_odom" to="/iris_4/mavros/local_position/odom"/>
+            <param name ="enable_vel_transpose_b2w" value="true"/>
+            <param name ="enable_imu_dt_check" value="false"/>
+            <param name ="drone_config_path" value="$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
+            <param name ="drone_name" value="iris_4"/>
+            <param name ="takeoff_height" value="4"/>
+            <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
+            <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
+        </node>
+        <include file="$(find mavros)/launch/px4.launch" >
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(eval 1 + arg('ID'))"/>
+            <arg name="tgt_component" value="1"/>
+        </include>
+            <param name="swarm_racer_flage" value="1"/>
+            <param name="swarm_racer_id" value="4"/>
+    </group> -->
+
+    <!-- <group ns="iris_5">
+    <param name = "use_sim_time" value="true"/>
+        <arg name="ID" value="4"/>
+        <arg name="fcu_url" default="udp://:2454$(arg ID)@localhost:3458$(arg ID)"/>
+        <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
+        <node name = "ctrl_bridge_$(arg ID)" pkg = "emnv_ctl_bridge" type = "ctrl_bridge" output = "screen" required="true">
+            <remap from="~pos_sp_cmd" to="/racer_5/setpoint_raw/local"/>
+            <remap from="~ref_odom" to="/iris_5/mavros/local_position/odom"/>
+            <param name ="enable_vel_transpose_b2w" value="true"/>
+            <param name ="enable_imu_dt_check" value="false"/>
+            <param name ="drone_config_path" value="$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
+            <param name ="drone_name" value="iris_5"/>
+            <param name ="takeoff_height" value="$(arg takeoff_height)"/>
+            <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
+            <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
+        </node>
+        <include file="$(find mavros)/launch/px4.launch" >
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(eval 1 + arg('ID'))"/>
+            <arg name="tgt_component" value="1"/>
+        </include>
+    </group> 
+
+    <group ns="iris_6">
+    <param name = "use_sim_time" value="true"/>
+        <arg name="ID" value="5"/>
+        <arg name="fcu_url" default="udp://:2454$(arg ID)@localhost:3458$(arg ID)"/>
+        <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
+        <node name = "ctrl_bridge_$(arg ID)" pkg = "emnv_ctl_bridge" type = "ctrl_bridge" output = "screen" required="true">
+            <remap from="~pos_sp_cmd" to="/racer_6/setpoint_raw/local"/>
+            <remap from="~ref_odom" to="/iris_6/mavros/local_position/odom"/>
+            <param name ="enable_vel_transpose_b2w" value="true"/>
+            <param name ="enable_imu_dt_check" value="false"/>
+            <param name ="drone_config_path" value="$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
+            <param name ="drone_name" value="iris_6"/>
+            <param name ="takeoff_height" value="$(arg takeoff_height)"/>
+            <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
+            <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
+        </node>
+        <include file="$(find mavros)/launch/px4.launch" >
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value="$(arg gcs_url)"/>
+            <arg name="tgt_system" value="$(eval 1 + arg('ID'))"/>
+            <arg name="tgt_component" value="1"/>
+        </include>
+    </group>  -->
+
+</launch>
+<!-- rostopic pub /emnavi_cmd/takeoff std_msgs/String "data: 'iris'" -->
+<!-- rostopic pub /racer_1/setpoint_raw/local emnv_ctl_bridge/PvayCommand "header:
+  seq: 0
+  stamp: {secs: 0, nsecs: 0}
+  frame_id: ''
+position: {x: 3.0, y: 0.0, z: 0.0}
+velocity: {x: 0.0, y: 0.0, z: 0.0}
+acceleration: {x: 0.0, y: 0.0, z: 0.0}
+yaw: 1.6
+yaw_dot: 0.0
+kx: [0.0, 0.0, 0.0]
+kv: [0.0, 0.0, 0.0]
+trajectory_id: 0
+trajectory_flag: 0" -r 10 -->

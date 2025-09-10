@@ -1,0 +1,34 @@
+<launch>
+    <node name = "connnect2x_node" pkg = "emnv_ctl_bridge" type = "connnect2x.py" output = "screen" required="true">
+        <param name ="config_file" value="$(find emnv_ctl_bridge)/config/share_topic.yaml"/>
+
+        <remap from="/conn2x/swarm_expl/drone_state"           to="/swarm_expl/drone_state"/>
+        <remap from="/conn2x/swarm_expl/grid_tour_send"        to="/swarm_expl/grid_tour_send"/>
+        <remap from="/conn2x/swarm_expl/hgrid_send"        to="/swarm_expl/hgrid_send"/>
+        <remap from="/conn2x/swarm_expl/pair_opt"        to="/swarm_expl/pair_opt"/>
+        <remap from="/conn2x/swarm_expl/pair_opt_res"        to="/swarm_expl/pair_opt_res"/>
+
+        <remap from="/conn2x/multi_map_manager/chunk_data"        to="/multi_map_manager/chunk_data"/>
+        <remap from="/conn2x/multi_map_manager/chunk_stamps"   to="/multi_map_manager/chunk_stamps"/>
+        <remap from="/conn2x/planning/swarm_traj"              to="/planning/swarm_traj"/>
+
+        <!--Racer&&mavros-->
+        <remap from="/conn2x/drone_1/mavros/state"                     to="/drone_1/mavros/state"/>
+        <remap from="/conn2x/drone_1/ctrl_bridge/bridge_status"                     to="/drone_1/ctrl_bridge/bridge_status"/>
+        <remap from="/conn2x/pose_racer_1"                     to="/pose_racer_1"/>
+        <remap from="/conn2x/racer_1"                          to="/racer_1"/>
+        <remap from="/conn2x/sdf_map/occupancy_all_1"          to="/sdf_map/occupancy_all_1"/>
+        <remap from="/conn2x/planning_vis/trajectory_1"        to="/planning_vis/trajectory_1"/>
+        <remap from="/conn2x/planning_vis/frontier_1"        to="/planning_vis/frontier_1"/>
+        <remap from="/conn2x/planning_vis/viewpoints_1"        to="/planning_vis/viewpoints_1"/>
+
+        <remap from="/conn2x/drone_2/mavros/state"                     to="/drone_2/mavros/state"/>
+        <remap from="/conn2x/drone_2/ctrl_bridge/bridge_status"                     to="/drone_2/ctrl_bridge/bridge_status"/>
+        <remap from="/conn2x/pose_racer_2"                     to="/pose_racer_2"/>
+        <remap from="/conn2x/racer_2"                          to="/racer_2"/>
+        <remap from="/conn2x/sdf_map/occupancy_all_2"          to="/sdf_map/occupancy_all_2"/>
+        <remap from="/conn2x/planning_vis/trajectory_2"        to="/planning_vis/trajectory_2"/>
+        <remap from="/conn2x/planning_vis/frontier_2"          to="/planning_vis/frontier_2"/>
+        <remap from="/conn2x/planning_vis/viewpoints_2"        to="/planning_vis/viewpoints_2"/>
+    </node> 
+</launch>
