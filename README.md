@@ -31,7 +31,7 @@ roslaunch emnv_ctl_bridge simple_gazebo_swarm.launch
 ## /world_moldes        .world的环境模型
 ```
 
-# 新增TJU的foreset场景下的仿真环境
+# 新增TJU(TJ university)的forest场景下的仿真环境
 ```bash
 roslaunch emnv_scene gazebo_forest_TJU.launch
 # 务必编译emnv_scene,5个墙壁模型,通过urdf文件链接.
