@@ -44,5 +44,5 @@ roslaunch emnv_scene gazebo_forest_TJU.launch
 
 # 假墙: 3×3米的  三个;    3×2米  一个;
 
-# 更新.woorld,并替换源有的场景时,请不要加载飞机!
+# 更新.world,并替换源有的场景时,请不要加载飞机!
 ```
