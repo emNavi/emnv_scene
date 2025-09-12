@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="forest_wall_4">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0293365760036922 -0.424346836184447 -5.22511800923989E-07"
+        rpy="0 0 0" />
+      <mass
+        value="647.060949723429" />
+      <inertia
+        ixx="742.830997891525"
+        ixy="5.41938326272626"
+        ixz="6.93603980428228E-05"
+        iyy="660.844788645412"
+        iyz="-2.85534941792152E-06"
+        izz="1396.59469771005" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://emnv_scene/urdf_models/forest_wall_4/meshes/forest_wall_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://emnv_scene/urdf_models/forest_wall_4/meshes/forest_wall_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

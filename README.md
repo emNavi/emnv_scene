@@ -22,8 +22,27 @@ roslaunch emnv_ctl_bridge simple_gazebo_swarm.launch
 ```bash
 # emnv_scene/world	    gazebo的world环境  
 
+# emnv_scene/urdf_models 导入的urdf模型文件
+
 # emnv_scene/models/	模型文件下的三个文件夹：
 ## /robots              机器模型
 ## /sensors             传感器		
-## /others              暂未用上的模型、传感器  
+## /others              暂未用上的模型、传感器 
+## /world_moldes        .world的环境模型
+```
+
+# 新增TJU的foreset场景下的仿真环境
+```bash
+roslaunch emnv_scene gazebo_forest_TJU.launch
+# 务必编译emnv_scene,5个墙壁模型,通过urdf文件链接.
+# 若不编译,无法正常加载和使用该world场景
+
+# 该场景尺寸,13*7*7m
+
+# 榕树2.8高×2 宽    10棵
+# 松树2高×1宽     5棵
+
+# 假墙: 3×3米的  三个;    3×2米  一个;
+
+# 更新.woorld,并替换源有的场景时,请不要加载飞机!
 ```
