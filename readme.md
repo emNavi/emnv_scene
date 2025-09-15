@@ -1,6 +1,13 @@
 # emnv_scene
 ## Requirement
-emnv_ctl_bridge
+- emnv_ctl_bridge
+- gazebo_ros
+- xmlstarlet
+## PX4-Autopilot 目录下
+
+```bash
+echo "export PX4_HOME=$(pwd)"  >> ~/.bashrc
+```
 
 ## 基础Launch文件说明
 - gazebo.launch: 打开一个空的gazebo
@@ -12,3 +19,4 @@ emnv_ctl_bridge
 - single.launch: 打开一个iris无人机的gazebo，并拉起tf、ctl_bridge和mavros节点
 
 - multi.launch: 打开多个iris无人机的gazebo，并拉起一个tf节点，多个ctl_bridge和mavros节点
+
