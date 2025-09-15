@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="suidao">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.825647543996341 -7.45090501936767 2.44773392006916E-05"
+        rpy="0 0 0" />
+      <mass
+        value="19270.2127199609" />
+      <inertia
+        ixx="364851.157791051"
+        ixy="-7673.35157279416"
+        ixz="1.85434772742838"
+        iyy="102936.607857638"
+        iyz="2.76396228005985"
+        izz="450341.820369179" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://emnv_scene/urdf_models/suidao/meshes/suidao.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://emnv_scene/urdf_models/suidao/meshes/suidao.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

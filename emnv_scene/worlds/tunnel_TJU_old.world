@@ -87,10 +87,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>12329 829000000</sim_time>
-      <real_time>327 937473867</real_time>
-      <wall_time>1757921010 48534701</wall_time>
-      <iterations>325891</iterations>
+      <sim_time>12819 244000000</sim_time>
+      <real_time>334 69263829</real_time>
+      <wall_time>1757924944 588869292</wall_time>
+      <iterations>333427</iterations>
       <model name='Bush 0_0_clone_4_clone'>
         <pose>3.55902 -16.2483 0 1.57079 -0 0</pose>
         <scale>1 1 1</scale>
@@ -282,13 +282,13 @@
         </link>
       </model>
       <model name='forest_wall_1'>
-        <pose>-3.78036 0.535948 1.08934 1.5708 -0 1.55065</pose>
+        <pose>-3.78041 0.535957 1.08934 1.5708 -0 1.54771</pose>
         <scale>1 1 1</scale>
         <link name='base_link'>
-          <pose>-3.78036 0.535948 1.08934 1.5708 -0 1.55065</pose>
+          <pose>-3.78041 0.535957 1.08934 1.5708 -0 1.54771</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.338833 -6.51461 2.46639 3.12098 -0.214613 0.031266</acceleration>
-          <wrench>-175.569 -3375.6 1277.98 0 -0 0</wrench>
+          <acceleration>0.287308 4.92103 -0.829938 -2.35763 0.186785 0.059118</acceleration>
+          <wrench>148.871 2549.88 -430.04 0 -0 0</wrench>
         </link>
       </model>
       <model name='forest_wall_2'>
@@ -297,35 +297,35 @@
         <link name='base_link'>
           <pose>-4.69144 -7.67155 0.147842 -3.04192 4e-06 0.019172</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>2.63717 0.050641 -0.061423 3.11801 1.09465 -2.62073</acceleration>
-          <wrench>1366.47 26.2402 -31.8271 0 -0 0</wrench>
+          <acceleration>2.63717 0.050639 -0.061423 3.11802 1.09465 -2.62073</acceleration>
+          <wrench>1366.47 26.2392 -31.8271 0 -0 0</wrench>
         </link>
       </model>
       <model name='forest_wall_3'>
-        <pose>2.12742 0.844991 1.59488 1.5708 2e-06 1.34495</pose>
+        <pose>2.1275 0.844944 1.59488 1.5708 2e-06 1.34359</pose>
         <scale>1 1 1</scale>
         <link name='base_link'>
-          <pose>2.12742 0.844991 1.59488 1.5708 2e-06 1.34495</pose>
+          <pose>2.1275 0.844944 1.59488 1.5708 2e-06 1.34359</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.994446 4.05717 -1.73964 -1.76024 0.342188 -0.023099</acceleration>
-          <wrench>736.02 3002.84 -1287.56 0 -0 0</wrench>
+          <acceleration>0.917932 3.71392 -2.41827 -1.61194 0.313832 -0.013461</acceleration>
+          <wrench>679.39 2748.79 -1789.84 0 -0 0</wrench>
         </link>
       </model>
       <model name='forest_wall_4'>
-        <pose>1.23626 -6.80697 1.60323 1.5708 -2e-06 -1.56257</pose>
+        <pose>1.23568 -6.80695 1.60323 1.5708 -2e-06 -1.56513</pose>
         <scale>1 1 1</scale>
         <link name='base_link'>
-          <pose>1.23626 -6.80697 1.60323 1.5708 -2e-06 -1.56257</pose>
+          <pose>1.23568 -6.80695 1.60323 1.5708 -2e-06 -1.56513</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.122208 5.92392 1.94123 -2.67441 -0.046684 -0.077818</acceleration>
-          <wrench>79.0757 3833.14 1256.09 0 -0 0</wrench>
+          <acceleration>0.136473 5.92373 1.94144 -2.67446 -0.041381 -0.077317</acceleration>
+          <wrench>88.3066 3833.01 1256.23 0 -0 0</wrench>
         </link>
       </model>
       <model name='forest_wall_5'>
-        <pose>0.486143 6.53493 0.149662 -1.63736 -0 -0.92011</pose>
+        <pose>0.486142 6.53493 0.149662 -1.63736 -0 -0.92011</pose>
         <scale>1 1 1</scale>
         <link name='base_link'>
-          <pose>0.486143 6.53493 0.149662 -1.63736 -0 -0.92011</pose>
+          <pose>0.486142 6.53493 0.149662 -1.63736 -0 -0.92011</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>-1.95205 -1.48583 -1.37522 -1.50067 0.14857 -2.88003</acceleration>
           <wrench>-2049.66 -1560.12 -1443.98 0 -0 0</wrench>
@@ -375,8 +375,8 @@
         <link name='link'>
           <pose>-8.95845 5.4829 -0.020259 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 0 0.001602 0 -0 0</acceleration>
-          <wrench>-0 0 1.60205 0 -0 0</wrench>
+          <acceleration>-0 -0 0.001602 0 -0 0</acceleration>
+          <wrench>-0 -0 1.60205 0 -0 0</wrench>
         </link>
       </model>
       <model name='h_1_clone'>
@@ -385,8 +385,8 @@
         <link name='link'>
           <pose>0.183791 5.48947 -0.020259 0 -0 0.001493</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 -0 0.001602 0 -0 0</acceleration>
-          <wrench>-0 -0 1.60205 0 -0 0</wrench>
+          <acceleration>0 -0 0.001602 0 -0 0</acceleration>
+          <wrench>0 -0 1.60205 0 -0 0</wrench>
         </link>
       </model>
       <model name='pine_tree'>
@@ -450,13 +450,23 @@
         </link>
       </model>
       <model name='suidao'>
-        <pose>12.9141 -6.17369 1.19999 0 -0 1.59884</pose>
+        <pose>26.1979 2.13301 0.999998 -0 2e-06 -1.58302</pose>
         <scale>1 1 1</scale>
         <link name='base_link'>
-          <pose>12.9141 -6.17369 1.19999 0 -0 1.59884</pose>
+          <pose>26.1979 2.13301 0.999998 -0 2e-06 -1.58302</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -188848 0 -0 0</wrench>
+          <acceleration>-0.688466 -1.45172 -3.92766 -0.636957 -0.365407 -0.066283</acceleration>
+          <wrench>-13266.9 -27974.9 -75686.7 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='suidao_wall'>
+        <pose>26.164 1.94878 -5.5 0 -0 -1.59001</pose>
+        <scale>1 1 1</scale>
+        <link name='base_link'>
+          <pose>26.164 1.94878 -5.5 0 -0 -1.59001</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-1.7629 0.40574 0.097945 -0.627152 -0.313485 -0.011151</acceleration>
+          <wrench>-99681.2 22942.1 5538.17 0 -0 0</wrench>
         </link>
       </model>
       <model name='tanke_0'>
@@ -465,18 +475,18 @@
         <link name='link'>
           <pose>-6.41052 5.49151 0.0025 0 -0 -0.000981</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -0 0 -0 0</acceleration>
-          <wrench>0 0 -0 0 -0 0</wrench>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_box'>
-        <pose>1.97023 8.61458 0.5 0 -0 0.323283</pose>
+        <pose>2.39384 8.61323 0.5 0 -0 0.329105</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.97023 8.61458 0.5 0 -0 0.323283</pose>
+          <pose>2.39384 8.61323 0.5 0 -0 0.329105</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 0 0 0 -1e-06 0</acceleration>
-          <wrench>-0 0 0 0 -0 0</wrench>
+          <acceleration>-0 0 -0 0 -1e-06 0</acceleration>
+          <wrench>-0 0 -0 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_box_0.25'>
@@ -485,8 +495,8 @@
         <link name='link'>
           <pose>-2.26963 8.03819 0.125 0 -0 -0.156402</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-5e-06 0 -6e-06 1e-06 -3.8e-05 -1.1e-05</acceleration>
-          <wrench>-5e-06 0 -6e-06 0 -0 0</wrench>
+          <acceleration>6e-06 4e-06 6e-06 -3.4e-05 4.8e-05 1.1e-05</acceleration>
+          <wrench>6e-06 4e-06 6e-06 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_box_0.6'>
@@ -515,28 +525,28 @@
         <link name='link'>
           <pose>-2.04461 1.75016 0.125 -1.5708 0 0.113982</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 0 0 0 -0 0</acceleration>
-          <wrench>-0 0 0 0 -0 0</wrench>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_box_1.2'>
-        <pose>-3.58847 6.26603 0.6 -1e-06 -1e-06 -0.403867</pose>
+        <pose>-3.58847 6.26603 0.599999 2e-06 -1e-06 -0.403849</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-3.48473 6.42302 0.6 -1e-06 -1e-06 -0.403867</pose>
+          <pose>-3.48473 6.42302 0.6 2e-06 -1e-06 -0.403849</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.634791 1.58227 -1.33454 -2.63711 -1.05798 0</acceleration>
-          <wrench>-0.634791 1.58227 -1.33454 0 -0 0</wrench>
+          <acceleration>-1.61433 -0.647691 -1.16295 -2.06211 -0.451044 3.14159</acceleration>
+          <wrench>-1.61433 -0.647691 -1.16295 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_box_2'>
-        <pose>-7.95049 6.57855 0.158643 0.00271 1.57074 1.61144</pose>
+        <pose>-7.9507 6.58267 0.158643 0.002654 1.57074 1.63369</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-8.13549 6.57153 0.12494 0.00271 1.57074 1.61144</pose>
+          <pose>-8.13549 6.57153 0.12494 0.002654 1.57074 1.63369</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.480502 -6.70676 0 0.30696 0.991809 3.14159</acceleration>
-          <wrench>0.480502 -6.70676 0 0 -0 0</wrench>
+          <acceleration>0.616677 -6.6962 0 0.245013 -0.203585 3.14159</acceleration>
+          <wrench>0.616677 -6.6962 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_sphere'>
@@ -550,13 +560,13 @@
         </link>
       </model>
       <model name='wall_racer'>
-        <pose>11.3193 -9.54005 0.099997 -2.37812 1.57079 -2.35868</pose>
+        <pose>11.8639 -30.2008 0.1 -3.13463 1.57079 -3.14159</pose>
         <scale>1 1 1</scale>
         <link name='base_link'>
-          <pose>11.3193 -9.54005 0.099997 -2.37812 1.57079 -2.35868</pose>
+          <pose>11.8639 -30.2008 0.1 -3.13463 1.57079 -3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.01608 -0.016917 0.002213 0.340194 -0.160728 0</acceleration>
-          <wrench>-1284.8 -1351.66 176.838 0 -0 0</wrench>
+          <acceleration>-0.000795 -0.000443 -0.011267 0.008901 -0.00795 0</acceleration>
+          <wrench>-63.5185 -35.3625 -900.227 0 -0 0</wrench>
         </link>
       </model>
       <model name='zhangpeng_0'>
@@ -565,8 +575,8 @@
         <link name='link'>
           <pose>5.10524 -4.53401 0.0025 3.14159 0 -1.1365</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 -0 -0 0 -0 0</acceleration>
-          <wrench>-0 -0 -0 0 -0 0</wrench>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='zhuangjiache_0'>
@@ -575,8 +585,8 @@
         <link name='link'>
           <pose>-6.96968 -1.24631 0.005 0 -0 0.002874</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -0 0 -0 0</acceleration>
-          <wrench>0 0 -0 0 -0 0</wrench>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -588,7 +598,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-7.55614 -0.597322 59.8887 0 1.3258 0.05581</pose>
+        <pose>14.5328 -15.9854 80.648 -1e-06 1.5698 -0.032163</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -3419,6 +3429,57 @@
             <mesh>
               <scale>1 1 1</scale>
               <uri>/home/emnavi/catkin_ws/src/emnv_scene/urdf_models/suidao/meshes/suidao.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0 0 0 0 -0 0</pose>
+    </model>
+    <model name='suidao_wall'>
+      <link name='base_link'>
+        <inertial>
+          <pose>2.94322 -5.85204 8.58865 0 -0 0</pose>
+          <mass>56543.9</mass>
+          <inertia>
+            <ixx>2.98258e+06</ixx>
+            <ixy>386983</ixy>
+            <ixz>79146.4</ixz>
+            <iyy>1.16875e+06</iyy>
+            <iyz>-96906.3</iyz>
+            <izz>3.67936e+06</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/emnavi/catkin_ws/src/emnv_scene/urdf_models/suidao_wall/meshes/suidao_wall.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/emnavi/catkin_ws/src/emnv_scene/urdf_models/suidao_wall/meshes/suidao_wall.STL</uri>
             </mesh>
           </geometry>
         </visual>
