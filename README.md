@@ -46,3 +46,18 @@ roslaunch emnv_scene gazebo_forest_TJU.launch
 
 # 更新.world,并替换源有的场景时,请不要加载飞机!
 ```
+
+# 新增TJU(TJ university)的tunnel场景下的仿真环境
+```bash
+roslaunch emnv_scene tunnel_TJU.launch
+# 务必编译emnv_scene,隧道的模型文件,通过urdf文件链接.
+# 若不编译,无法正常加载和使用该world场景
+
+# 该场景尺寸,6.5*13+2.2*7.8+3.0*7m
+
+# 内部矿洞，直径2m，直径2m的半圆+2*2的矩形矿洞。
+
+# 图片pictures/tunnel_simulation
+
+# 更新.world,并替换源有的场景时,请不要加载飞机!
+```
