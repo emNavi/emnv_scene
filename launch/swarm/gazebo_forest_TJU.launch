@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<launch>
+    <!--森林的探测范围:13*7*7m-->
+    <arg name="world" default="$(find emnv_scene)/worlds/forest_TJU.world"/>
+    <!-- <arg name="world" default="/home/emnavi/PX4_Firmware/simulation_world/sonoma_raceway1-4.world"/>~ -->
+    <!-- gazebo configs -->
+    <arg name="gui" default="true"/>
+    <arg name="debug" default="false"/>
+    <arg name="verbose" default="false"/>
+    <arg name="paused" default="false"/>
+    <!-- Gazebo sim -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="gui" value="$(arg gui)"/>
+        <arg name="world_name" value="$(arg world)"/>
+        <arg name="debug" value="$(arg debug)"/>
+        <arg name="verbose" value="$(arg verbose)"/>
+        <arg name="paused" value="$(arg paused)"/>
+    </include>
+
+    <!--加载X280模型-->
+    <group ns="iris_1">
+            <arg name="ID" value="0"/>
+            <arg name="ID_in_group" value="0"/>
+            <arg name="fcu_url" default="udp://:24540@localhost:34580"/>
+        <include file="$(find emnv_scene)/launch/single_vehicle_spawn_xtd.launch">
+            <arg name="x" value="-9.0"/>
+            <arg name="y" default="0.0"/>
+            <arg name="z" default="0.2"/>
+            <arg name="R" value="0"/>
+            <arg name="P" value="0"/>
+            <arg name="Y" value="0"/>
+            <arg name="vehicle" value="iris"/>
+            <arg name="sdf" value="iris_3d_lidar"/>
+            <arg name="mavlink_udp_port" value="14560"/>
+            <arg name="mavlink_tcp_port" value="4560"/>
+            <arg name="ID" value="$(arg ID)"/>
+            <arg name="ID_in_group" value="$(arg ID_in_group)"/>
+        </include>
+    </group>
+        <!-- MAVROS -->
+        <!-- <include file="$(find mavros)/launch/px4.launch">
+        <arg name="fcu_url" value="udp://:24540@localhost:34580"/>
+        <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
+        <arg name="tgt_system" value="$(eval 0 + arg('ID'))"/>
+        <arg name="tgt_component" value="1"/>
+        (20,-14,0.2)  (13,0,0.2)
+        (-9.0,1.0,0.2)
+    </include> -->
+
+    <!-- <group ns="iris_2">
+            <arg name="ID" value="1"/>
+            <arg name="ID_in_group" value="1"/>
+        <include file="$(find emnv_scene)/launch/single_vehicle_spawn_xtd.launch">
+            <arg name="x" value="-9.0"/>
+            <arg name="y" value="2.0"/>
+            <arg name="z" value="0.2"/>
+            <arg name="R" value="0"/>
+            <arg name="P" value="0"/>
+            <arg name="Y" value="0"/>
+            <arg name="vehicle" value="iris"/>
+            <arg name="sdf" value="iris_3d_lidar2"/>
+            <arg name="mavlink_udp_port" value="1857$(arg ID)"/>
+            <arg name="mavlink_tcp_port" value="456$(arg ID)"/>
+            <arg name="ID" value="$(arg ID)"/>
+            <arg name="ID_in_group" value="$(arg ID_in_group)"/>
+        </include>
+    </group> -->
+
+    <!-- <group ns="iris_3">
+            <arg name="ID" value="2"/>
+            <arg name="ID_in_group" value="2"/>
+        <include file="$(find emnv_scene)/launch/single_vehicle_spawn_xtd.launch">
+            <arg name="x" value="-9.0"/>
+            <arg name="y" value="-2.0"/>
+            <arg name="z" value="0.2"/>
+            <arg name="R" value="0"/>
+            <arg name="P" value="0"/>
+            <arg name="Y" value="0"/>
+            <arg name="vehicle" value="iris"/>
+            <arg name="sdf" value="iris_3d_lidar3"/>
+            <arg name="mavlink_udp_port" value="1857$(arg ID)"/>
+            <arg name="mavlink_tcp_port" value="456$(arg ID)"/>
+            <arg name="ID" value="$(arg ID)"/>
+            <arg name="ID_in_group" value="$(arg ID_in_group)"/>
+        </include>
+    </group>
+
+    <group ns="iris_4">
+            <arg name="ID" value="3"/>
+            <arg name="ID_in_group" value="3"/>
+        <include file="$(find emnv_scene)/launch/single_vehicle_spawn_xtd.launch">
+            <arg name="x" value="-7.0"/>
+            <arg name="y" value="0.0"/>
+            <arg name="z" value="0.2"/>
+            <arg name="R" value="0"/>
+            <arg name="P" value="0"/>
+            <arg name="Y" value="0"/>
+            <arg name="vehicle" value="iris"/>
+            <arg name="sdf" value="iris_3d_lidar4"/>
+            <arg name="mavlink_udp_port" value="1857$(arg ID)"/>
+            <arg name="mavlink_tcp_port" value="456$(arg ID)"/>
+            <arg name="ID" value="$(arg ID)"/>
+            <arg name="ID_in_group" value="$(arg ID_in_group)"/>
+        </include>
+    </group> -->
+
+    <!-- <group ns="iris_5">
+            <arg name="ID" value="4"/>
+            <arg name="ID_in_group" value="4"/>
+        <include file="$(find emnv_scene)/launch/single_vehicle_spawn_xtd.launch">
+            <arg name="x" value="-8.0"/>
+            <arg name="y" value="1.0"/>
+            <arg name="z" value="0.2"/>
+            <arg name="R" value="0"/>
+            <arg name="P" value="0"/>
+            <arg name="Y" value="0"/>
+            <arg name="vehicle" value="iris"/>
+            <arg name="sdf" value="iris_3d_lidar5"/>
+            <arg name="mavlink_udp_port" value="1857$(arg ID)"/>
+            <arg name="mavlink_tcp_port" value="456$(arg ID)"/>
+            <arg name="udp_gimbal_port" value="1303$(arg ID)"/>
+            <arg name="ID" value="$(arg ID)"/>
+            <arg name="ID_in_group" value="$(arg ID_in_group)"/>
+        </include>
+    </group>
+
+    <group ns="iris_6">
+            <arg name="ID" value="5"/>
+            <arg name="ID_in_group" value="5"/>
+        <include file="$(find emnv_scene)/launch/single_vehicle_spawn_xtd.launch">
+            <arg name="x" value="-8.0"/>
+            <arg name="y" value="-1.0"/>
+            <arg name="z" value="0.2"/>
+            <arg name="R" value="0"/>
+            <arg name="P" value="0"/>
+            <arg name="Y" value="0"/>
+            <arg name="vehicle" value="iris"/>
+            <arg name="sdf" value="iris_3d_lidar6"/>
+            <arg name="mavlink_udp_port" value="1857$(arg ID)"/>
+            <arg name="mavlink_tcp_port" value="456$(arg ID)"/>
+            <arg name="udp_gimbal_port" value="1303$(arg ID)"/>
+            <arg name="ID" value="$(arg ID)"/>
+            <arg name="ID_in_group" value="$(arg ID_in_group)"/>
+        </include>
+    </group> -->
+
+    <!--(forest_TJU.world已包含)加载urdf文件，同济的5个墙壁障碍物-->
+    <!-- <node name="spawn_model_1" pkg="gazebo_ros" type="spawn_model" output="screen" 
+    args="-file $(find emnv_scene)/urdf_models/suidao_wall/urdf/suidao_wall.urdf -urdf -model suidao_wall" /> -->
+    <!-- <node name="spawn_model_1" pkg="gazebo_ros" type="spawn_model" output="screen" 
+    args="-file $(find emnv_scene)/urdf_models/forest_wall_1/urdf/forest_wall_1.urdf -urdf -model forest_wall_1" />
+    <node name="spawn_model_2" pkg="gazebo_ros" type="spawn_model" output="screen" 
+    args="-file $(find emnv_scene)/urdf_models/forest_wall_2/urdf/forest_wall_2.urdf -urdf -model forest_wall_2" />
+    <node name="spawn_model_3" pkg="gazebo_ros" type="spawn_model" output="screen" 
+    args="-file $(find emnv_scene)/urdf_models/forest_wall_3/urdf/forest_wall_3.urdf -urdf -model forest_wall_3" />
+    <node name="spawn_model_4" pkg="gazebo_ros" type="spawn_model" output="screen" 
+    args="-file $(find emnv_scene)/urdf_models/forest_wall_4/urdf/forest_wall_4.urdf -urdf -model forest_wall_4" />
+    <node name="spawn_model_5" pkg="gazebo_ros" type="spawn_model" output="screen" 
+    args="-file $(find emnv_scene)/urdf_models/forest_wall_5/urdf/forest_wall_5.urdf -urdf -model forest_wall_5" /> -->
+
+    <!--手动加载sdf模型-->
+        <!-- <node name="spawn_iris1"    pkg="gazebo_ros"    type="spawn_model"  output="screen"
+            args="-file /home/emnavi/catkin_ws/src/emnv_scene/models/iris_3d_lidar/iris_3d_lidar.sdf 
+            -sdf -model iris_3d_lidar   
+            -x -9.0 -y 0.0 -z 0.2   -R 0 -P 0 -Y 0"/> -->
+        <!-- rosrun gazebo_ros spawn_model -file /home/emnavi/catkin_ws/src/emnv_scene/models/iris_3d_lidar/iris_3d_lidar.sdf   -sdf   -model iris_1   -x -9.0 -y 0.0 -z 0.2   -R 0 -P 0 -Y 0 -->
+</launch>
+<!--the launch file is generated by XTDrone multi-vehicle generator.py  -->

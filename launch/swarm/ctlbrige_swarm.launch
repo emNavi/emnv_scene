@@ -10,7 +10,7 @@
     <group ns="iris_1">
     <param name = "use_sim_time" value="true"/>
         <arg name="ID" value="0"/>
-        <arg name="fcu_url" default="udp://:2454$(arg ID)@localhost:3458$(arg ID)"/>
+        <arg name="fcu_url" default="udp://:1454$(arg ID)@localhost:1455$(arg ID)"/>
         <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
         <node name = "ctrl_bridge_$(arg ID)" pkg = "emnv_ctl_bridge" type = "ctrl_bridge" output = "screen" required="true">
             <remap from="~pos_sp_cmd" to="/racer_1/setpoint_raw/local"/>
