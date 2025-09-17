@@ -34,7 +34,7 @@
 
     <!-- 0 -->
     <group ns="0">
-        <arg name="ID" value="0"/>
+        <arg name="drone_id" value="0"/>
         <include file="$(find emnv_scene)/launch/single_quad_spawn.launch">
             <arg name="x" value="0"/>
             <arg name="y" value="0"/>
@@ -46,26 +46,25 @@
             <arg name="sdf" value="$(arg sdf)"/>
             <arg name="mavlink_udp_port" value="14560"/>
             <arg name="mavlink_tcp_port" value="4560"/>
-            <arg name="ID" value="$(arg ID)"/>
+            <arg name="drone_id" value="$(arg drone_id)"/>
         </include>
 
         <arg name="fcu_url" value="udp://:14540@127.0.0.1:14550"/>
-        <arg name = "odom_topic" value="/0/mavros/local_position/odom"/>
-        <include file="$(find emnv_scene)/launch/ctl_bridge/single_ctl_bridge.launch">
-            <arg name="ID" value="$(arg ID)"/>
+        <arg name = "ref_odom_topic" value="/0/mavros/local_position/odom"/>
+        <include file="$(find emnv_scene)/launch/single_ctl_bridge.launch">
+            <arg name="drone_id" value="$(arg drone_id)"/>
             <arg name="takeoff_height" value="$(arg takeoff_height)"/>
             <arg name="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <arg name="ctrl_mode" value="$(arg ctrl_mode)"/>
-            <arg name="drone_config_path" value = "$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
             <arg name="fcu_url" value="$(arg fcu_url)"/>
             <arg name="tgt_system" value="1" />
-            <arg name="odom_topic" value="$(arg odom_topic)"/>
+            <arg name="ref_odom_topic" value="$(arg ref_odom_topic)"/>
         </include>
     </group>
 
     <!-- 1 -->
     <group ns="1">
-        <arg name="ID" value="1"/>
+        <arg name="drone_id" value="1"/>
         <include file="$(find emnv_scene)/launch/single_quad_spawn.launch">
             <arg name="x" value="1"/>
             <arg name="y" value="0"/>
@@ -77,40 +76,24 @@
             <arg name="sdf" value="$(arg sdf)"/>
             <arg name="mavlink_udp_port" value="14561"/>
             <arg name="mavlink_tcp_port" value="4561"/>
-            <arg name="ID" value="$(arg ID)"/>
+            <arg name="drone_id" value="$(arg drone_id)"/>
         </include>
 
         <arg name="fcu_url" default="udp://:14541@127.0.0.1:14551"/>
-        <arg name = "odom_topic" value="/1/mavros/local_position/odom"/>
+        <arg name = "ref_odom_topic" value="/1/mavros/local_position/odom"/>
         <include file="$(find emnv_scene)/launch/single_ctl_bridge.launch">
-            <arg name="ID" value="$(arg ID)"/>
+            <arg name="drone_id" value="$(arg drone_id)"/>
             <arg name="takeoff_height" value="$(arg takeoff_height)"/>
             <arg name="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <arg name="ctrl_mode" value="$(arg ctrl_mode)"/>
-            <arg name="drone_config_path" value = "$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
             <arg name="fcu_url" value="$(arg fcu_url)"/>
             <arg name="tgt_system" value="2" />
-            <arg name="odom_topic" value="$(arg odom_topic)"/>
+            <arg name="ref_odom_topic" value="$(arg ref_odom_topic)"/>
         </include>
     </group>
 
-    <!-- 2 -->
-    <!-- <group ns="2">
-        <arg name="ID" value="2"/>
-        <include file="$(find emnv_scene)/launch/single_quad_spawn.launch">
-            <arg name="x" value="0"/>
-            <arg name="y" value="1"/>
-            <arg name="z" value="0"/>
-            <arg name="R" value="0"/>
-            <arg name="P" value="0"/>
-            <arg name="Y" value="0"/>
-            <arg name="vehicle" value="$(arg vehicle)"/>
-            <arg name="sdf" value="$(arg sdf)"/>
-            <arg name="mavlink_udp_port" value="14562"/>
-            <arg name="mavlink_tcp_port" value="4562"/>
-            <arg name="ID" value="$(arg ID)"/>
-        </include>
-    </group> -->
+
+    <node name = "gazebo_force_exit" pkg = "emnv_ctl_bridge" type = "gazebo_force_exit.py" output = "screen" />
 </launch>
 <!-- to add more UAVs (up to 10):
 Increase the id

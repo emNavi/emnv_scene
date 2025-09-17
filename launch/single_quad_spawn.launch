@@ -14,8 +14,7 @@
     <arg name="vehicle" default="iris"/>
     <arg name="world" default="$(find emnv_scene)/worlds/empty.world"/>
     <arg name="sdf" default="iris_realsense_camera"/>
-    <arg name="ID" default="0"/>
-    <arg name="ID_in_group" default="0"/>
+    <arg name="drone_id" default="0"/>
     <env name="PX4_SIM_MODEL" value="gazebo-classic_$(arg vehicle)" />
     <env name="PX4_ESTIMATOR" value="$(arg est)" />
     <arg name="mavlink_udp_port" default="14560"/>
@@ -30,11 +29,11 @@
     <!-- PX4 SITL -->
     <arg unless="$(arg interactive)" name="px4_command_arg1" value="-d"/>
     <arg     if="$(arg interactive)" name="px4_command_arg1" value=""/>
-    <node name="sitl_$(arg ID)" pkg="px4" type="px4" output="screen" 
-        args="$(find px4)/build/px4_sitl_default/etc -s etc/init.d-posix/rcS -i $(arg ID) -w sitl_$(arg vehicle)_$(arg ID) $(arg px4_command_arg1)">
+    <node name="sitl_$(arg drone_id)" pkg="px4" type="px4" output="screen" 
+        args="$(find px4)/build/px4_sitl_default/etc -s etc/init.d-posix/rcS -i $(arg drone_id) -w sitl_$(arg vehicle)_$(arg drone_id) $(arg px4_command_arg1)">
     </node>
     <!-- spawn vehicle -->
-    <node name="$(arg vehicle)_$(arg ID)_spawn" output="screen" pkg="gazebo_ros" type="spawn_model" 
-        args="-sdf -param model_description -model $(arg vehicle)_$(arg ID) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y)"/>
+    <node name="$(arg vehicle)_$(arg drone_id)_spawn" output="screen" pkg="gazebo_ros" type="spawn_model" 
+        args="-sdf -param model_description -model $(arg vehicle)_$(arg drone_id) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y)"/>
 
 </launch>
