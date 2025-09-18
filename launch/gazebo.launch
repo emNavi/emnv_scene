@@ -19,4 +19,7 @@
         <arg name="paused" value="$(arg paused)"/>
         <arg name="respawn_gazebo" value="$(arg respawn_gazebo)"/>
     </include>
+
+    <node name = "gazebo_force_exit" pkg = "emnv_ctl_bridge" type = "gazebo_force_exit.py" output = "screen" />
+    
 </launch>
