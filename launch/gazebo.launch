@@ -48,8 +48,8 @@
         (-9.0,1.0,0.2)
     </include> -->
 <!-- <node name="spawn_iris1"    pkg="gazebo_ros"    type="spawn_model"  output="screen"
-      args="-file /home/emnavi/catkin_ws/src/emnv_scene/models/iris_3d_lidar/iris_3d_lidar.sdf   -sdf   -model iris_3d_lidar   -x -9.0 -y 0.0 -z 0.2   -R 0 -P 0 -Y 0"/> -->
-<!-- rosrun gazebo_ros spawn_model -file /home/emnavi/catkin_ws/src/emnv_scene/models/iris_3d_lidar/iris_3d_lidar.sdf   -sdf   -model iris_1   -x -9.0 -y 0.0 -z 0.2   -R 0 -P 0 -Y 0 -->
+      args="-file /home/emnavi/X280_SIM/src/emnv_scene/urdf_models/emnv_scene/models/iris_3d_lidar/iris_3d_lidar.sdf   -sdf   -model iris_3d_lidar   -x -9.0 -y 0.0 -z 0.2   -R 0 -P 0 -Y 0"/> -->
+<!-- rosrun gazebo_ros spawn_model -file /home/emnavi/X280_SIM/src/emnv_scene/urdf_models/emnv_scene/models/iris_3d_lidar/iris_3d_lidar.sdf   -sdf   -model iris_1   -x -9.0 -y 0.0 -z 0.2   -R 0 -P 0 -Y 0 -->
 
     <!-- <group ns="iris_2">
             <arg name="ID" value="1"/>

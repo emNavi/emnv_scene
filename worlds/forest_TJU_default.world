@@ -411,36 +411,6 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='wall_racer'>
-        <pose>12.2516 10.8438 0.1 -1.59546 1.57079 3.14159</pose>
-        <scale>1 1 1</scale>
-        <link name='base_link'>
-          <pose>12.2516 10.8438 0.1 -1.59546 1.57079 3.14159</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.000467 -0.000781 0.011267 0.015522 0.004723 0</acceleration>
-          <wrench>37.3531 -62.3687 900.228 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='zhangpeng_0'>
-        <pose>5.10524 -4.53401 0.1175 -3.14159 -0 -1.1365</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>5.10524 -4.53401 0.0025 -3.14159 -0 -1.1365</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 0 -0 0 -0 0</acceleration>
-          <wrench>-0 0 -0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='zhuangjiache_0'>
-        <pose>-6.96968 -1.24631 -0.11 0 -0 0.002874</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-6.96968 -1.24631 0.005 0 -0 0.002874</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 -0 -0 0 -0 0</acceleration>
-          <wrench>-0 -0 -0 0 -0 0</wrench>
-        </link>
-      </model>
       <light name='sun'>
         <pose>0 0 10 0 -0 0</pose>
       </light>
@@ -1473,57 +1443,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-    </model>
-    <model name='wall_racer'>
-      <link name='base_link'>
-        <inertial>
-          <pose>-0 10.0341 9.97819 0 -0 0</pose>
-          <mass>79900.9</mass>
-          <inertia>
-            <ixx>5.32021e+06</ixx>
-            <ixy>1.01603e-12</ixy>
-            <ixz>5.68132e-13</ixz>
-            <iyy>2.67526e+06</iyy>
-            <iyz>4.18374e-11</iyz>
-            <izz>2.64548e+06</izz>
-          </inertia>
-        </inertial>
-        <collision name='base_link_collision'>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <scale>1 1 1</scale>
-              <uri>/home/emnavi/catkin_ws/src/wall_racer/meshes/base_link.STL</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='base_link_visual'>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <scale>1 1 1</scale>
-              <uri>/home/emnavi/catkin_ws/src/wall_racer/meshes/base_link.STL</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>0 0 0 0 -0 0</pose>
     </model>
     <light name='user_point_light_0' type='point'>
       <pose>-7.02428 -0.880974 1 0 -0 0</pose>

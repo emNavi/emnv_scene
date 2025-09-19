@@ -61,3 +61,6 @@ roslaunch emnv_scene tunnel_TJU.launch
 
 # 更新.world,并替换源有的场景时,请不要加载飞机!
 ```
+
+/home/emnavi/catkin_ws/
+/home/emnavi/X280_SIM/

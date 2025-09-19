@@ -6,6 +6,12 @@
     <!-- MAVROS and vehicle configs -->
     <node pkg="tf" type="static_transform_publisher" name="map_to_world" args="0 0 0 0 0 0 1 map world 100" />
     <!-- <param name="use_sim_time" value="true"/> -->
+    <!--集群初始位姿-->
+    <arg name= "swarm_racer_flage" default="true"/>
+    <arg name = "racer_x_1" default = "2.0"/>   <arg name = "racer_y_1" default = "0.0"/>   <arg name = "racer_z_1" default = "0.0"/>
+    <arg name = "racer_x_2" default = "2.0"/>   <arg name = "racer_y_2" default = "0.0"/>   <arg name = "racer_z_2" default = "0.0"/>
+    <arg name = "racer_x_3" default = "-2.0"/>  <arg name = "racer_y_2" default = "0.0"/>   <arg name = "racer_z_3" default = "0.0"/>
+    <arg name = "racer_x_4" default = "0.0"/>   <arg name = "racer_y_4" default = "2.0"/>   <arg name = "racer_z_4" default = "0.0"/>
 
     <group ns="iris_1">
     <param name = "use_sim_time" value="true"/>
@@ -13,7 +19,7 @@
         <arg name="fcu_url" default="udp://:1454$(arg ID)@localhost:1455$(arg ID)"/>
         <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
         <node name = "ctrl_bridge_$(arg ID)" pkg = "emnv_ctl_bridge" type = "ctrl_bridge" output = "screen" required="true">
-            <remap from="~pos_sp_cmd" to="/racer_1/setpoint_raw/local"/>
+            <remap from="~pos_sp_cmd" to="/drone_1_planning/pos_cmd"/>
             <remap from="~ref_odom" to="/iris_1/mavros/local_position/odom"/>
             <param name ="enable_vel_transpose_b2w" value="true"/>
             <param name ="enable_imu_dt_check" value="false"/>
@@ -22,6 +28,11 @@
             <param name ="takeoff_height" value="2"/>
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
+
+            <param name="racer_x" value="($arg racer_x_1)"/>	
+            <param name="racer_y" value="($arg racer_y_1)"/>
+            <param name="racer_z" value="($arg racer_z_1)"/>
+            <param name="swarm_racer_flage" value="$(arg swarm_racer_flage)"/>
         </node>
         <include file="$(find mavros)/launch/px4.launch" >
             <arg name="fcu_url" value="$(arg fcu_url)"/>
@@ -29,17 +40,15 @@
             <arg name="tgt_system" value="$(eval 1 + arg('ID'))"/>
             <arg name="tgt_component" value="1"/>
         </include>
-            <param name="swarm_racer_flage" value="1"/>
-            <param name="swarm_racer_id" value="1"/>
     </group> 
 
-    <!-- <group ns="iris_2">
+    <group ns="iris_2">
     <param name = "use_sim_time" value="true"/>
         <arg name="ID" value="1"/>
-        <arg name="fcu_url" default="udp://:2454$(arg ID)@localhost:3458$(arg ID)"/>
+        <arg name="fcu_url" default="udp://:1454$(arg ID)@localhost:1455$(arg ID)"/>
         <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
         <node name = "ctrl_bridge_$(arg ID)" pkg = "emnv_ctl_bridge" type = "ctrl_bridge" output = "screen" required="true">
-            <remap from="~pos_sp_cmd" to="/racer_2/setpoint_raw/local"/>
+            <remap from="~pos_sp_cmd" to="/drone_2_planning/pos_cmd"/>
             <remap from="~ref_odom" to="/iris_2/mavros/local_position/odom"/>
             <param name ="enable_vel_transpose_b2w" value="true"/>
             <param name ="enable_imu_dt_check" value="false"/>
@@ -48,6 +57,11 @@
             <param name ="takeoff_height" value="1"/>
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
+            <!--集群相对位置偏移-->
+            <param name="racer_x" value="($arg racer_x_1)"/>	
+            <param name="racer_y" value="($arg racer_y_1)"/>
+            <param name="racer_z" value="($arg racer_z_1)"/>
+            <param name="swarm_racer_flage" value="$(arg swarm_racer_flage)"/>
         </node>
         <include file="$(find mavros)/launch/px4.launch" >
             <arg name="fcu_url" value="$(arg fcu_url)"/>
@@ -55,17 +69,15 @@
             <arg name="tgt_system" value="$(eval 1 + arg('ID'))"/>
             <arg name="tgt_component" value="1"/>
         </include>
-            <param name="swarm_racer_flage" value="1"/>
-            <param name="swarm_racer_id" value="2"/>
     </group>     
     
-    <group ns="iris_3">
+    <!-- <group ns="iris_3">
     <param name = "use_sim_time" value="true"/>
         <arg name="ID" value="2"/>
-        <arg name="fcu_url" default="udp://:2454$(arg ID)@localhost:3458$(arg ID)"/>
+        <arg name="fcu_url" default="udp://:1454$(arg ID)@localhost:1455$(arg ID)"/>
         <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
         <node name = "ctrl_bridge_$(arg ID)" pkg = "emnv_ctl_bridge" type = "ctrl_bridge" output = "screen" required="true">
-            <remap from="~pos_sp_cmd" to="/racer_3/setpoint_raw/local"/>
+            <remap from="~pos_sp_cmd" to="/drone_3_planning/pos_cmd"/>
             <remap from="~ref_odom" to="/iris_3/mavros/local_position/odom"/>
             <param name ="enable_vel_transpose_b2w" value="true"/>
             <param name ="enable_imu_dt_check" value="false"/>
@@ -74,6 +86,11 @@
             <param name ="takeoff_height" value="1"/>
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
+
+            <param name="racer_x" value="($arg racer_x_3)"/>	
+            <param name="racer_y" value="($arg racer_y_3)"/>
+            <param name="racer_z" value="($arg racer_z_3)"/>
+            <param name="swarm_racer_flage" value="$(arg swarm_racer_flage)"/>
         </node>
         <include file="$(find mavros)/launch/px4.launch" >
             <arg name="fcu_url" value="$(arg fcu_url)"/>
@@ -81,17 +98,15 @@
             <arg name="tgt_system" value="$(eval 1 + arg('ID'))"/>
             <arg name="tgt_component" value="1"/>
         </include>
-            <param name="swarm_racer_flage" value="1"/>
-            <param name="swarm_racer_id" value="3"/>
-    </group> 
+    </group>  -->
 
-    <group ns="iris_4">
+    <!-- <group ns="iris_4">
     <param name = "use_sim_time" value="true"/>
         <arg name="ID" value="3"/>
-        <arg name="fcu_url" default="udp://:2454$(arg ID)@localhost:3458$(arg ID)"/>
+        <arg name="fcu_url" default="udp://:1454$(arg ID)@localhost:1455$(arg ID)"/>
         <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
         <node name = "ctrl_bridge_$(arg ID)" pkg = "emnv_ctl_bridge" type = "ctrl_bridge" output = "screen" required="true">
-            <remap from="~pos_sp_cmd" to="/racer_4/setpoint_raw/local"/>
+            <remap from="~pos_sp_cmd" to="/drone_4_planning/pos_cmd"/>
             <remap from="~ref_odom" to="/iris_4/mavros/local_position/odom"/>
             <param name ="enable_vel_transpose_b2w" value="true"/>
             <param name ="enable_imu_dt_check" value="false"/>
@@ -100,6 +115,11 @@
             <param name ="takeoff_height" value="4"/>
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
+
+            <param name="racer_x" value="($arg racer_x_4)"/>	
+            <param name="racer_y" value="($arg racer_y_4)"/>
+            <param name="racer_z" value="($arg racer_z_4)"/>
+            <param name="swarm_racer_flage" value="$(arg swarm_racer_flage)"/>
         </node>
         <include file="$(find mavros)/launch/px4.launch" >
             <arg name="fcu_url" value="$(arg fcu_url)"/>
@@ -107,17 +127,15 @@
             <arg name="tgt_system" value="$(eval 1 + arg('ID'))"/>
             <arg name="tgt_component" value="1"/>
         </include>
-            <param name="swarm_racer_flage" value="1"/>
-            <param name="swarm_racer_id" value="4"/>
     </group> -->
 
     <!-- <group ns="iris_5">
     <param name = "use_sim_time" value="true"/>
         <arg name="ID" value="4"/>
-        <arg name="fcu_url" default="udp://:2454$(arg ID)@localhost:3458$(arg ID)"/>
+        <arg name="fcu_url" default="udp://:1454$(arg ID)@localhost:1455$(arg ID)"/>
         <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
         <node name = "ctrl_bridge_$(arg ID)" pkg = "emnv_ctl_bridge" type = "ctrl_bridge" output = "screen" required="true">
-            <remap from="~pos_sp_cmd" to="/racer_5/setpoint_raw/local"/>
+            <remap from="~pos_sp_cmd" to="/drone_5_planning/pos_cmd"/>
             <remap from="~ref_odom" to="/iris_5/mavros/local_position/odom"/>
             <param name ="enable_vel_transpose_b2w" value="true"/>
             <param name ="enable_imu_dt_check" value="false"/>
@@ -126,6 +144,11 @@
             <param name ="takeoff_height" value="$(arg takeoff_height)"/>
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
+
+            <param name="racer_x" value="($arg racer_x_5)"/>	
+            <param name="racer_y" value="($arg racer_y_5)"/>
+            <param name="racer_z" value="($arg racer_z_5)"/>
+            <param name="swarm_racer_flage" value="$(arg swarm_racer_flage)"/>
         </node>
         <include file="$(find mavros)/launch/px4.launch" >
             <arg name="fcu_url" value="$(arg fcu_url)"/>
@@ -138,10 +161,10 @@
     <group ns="iris_6">
     <param name = "use_sim_time" value="true"/>
         <arg name="ID" value="5"/>
-        <arg name="fcu_url" default="udp://:2454$(arg ID)@localhost:3458$(arg ID)"/>
+        <arg name="fcu_url" default="udp://:1454$(arg ID)@localhost:1455$(arg ID)"/>
         <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
         <node name = "ctrl_bridge_$(arg ID)" pkg = "emnv_ctl_bridge" type = "ctrl_bridge" output = "screen" required="true">
-            <remap from="~pos_sp_cmd" to="/racer_6/setpoint_raw/local"/>
+            <remap from="~pos_sp_cmd" to="/drone_6_planning/pos_cmd"/>
             <remap from="~ref_odom" to="/iris_6/mavros/local_position/odom"/>
             <param name ="enable_vel_transpose_b2w" value="true"/>
             <param name ="enable_imu_dt_check" value="false"/>
@@ -150,6 +173,11 @@
             <param name ="takeoff_height" value="$(arg takeoff_height)"/>
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
+
+            <param name="racer_x" value="($arg racer_x_6)"/>	
+            <param name="racer_y" value="($arg racer_y_6)"/>
+            <param name="racer_z" value="($arg racer_z_6)"/>
+            <param name="swarm_racer_flage" value="$(arg swarm_racer_flage)"/>
         </node>
         <include file="$(find mavros)/launch/px4.launch" >
             <arg name="fcu_url" value="$(arg fcu_url)"/>

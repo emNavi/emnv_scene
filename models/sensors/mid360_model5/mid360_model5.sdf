@@ -74,7 +74,7 @@
 		      <samples>20000</samples>
 		      <downsample>4</downsample>
 		      <csv_file_name>mid360-real-centr5.csv</csv_file_name>
-          <publish_pointcloud_type>2</publish_pointcloud_type>
+          <publish_pointcloud_type>3</publish_pointcloud_type>
 		      <ros_topic>/livox/lidar5</ros_topic>
           <frameName>base_link</frameName>
         </plugin>

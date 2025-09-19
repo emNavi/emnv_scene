@@ -429,34 +429,6 @@
           <wrench>0 -0 1.60159 0 -0 0</wrench>
         </link>
       </model>
-      <model name='racer_wall_8M'>
-        <pose>-0.027 -0.136254 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='Wall_11'>
-          <pose>-10.0741 -0.136254 0 0 0 -1.57326</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-        <link name='Wall_13'>
-          <pose>9.99759 -0.136254 0 0 0 -1.5708</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-        <link name='Wall_15'>
-          <pose>-0.003363 -10.0613 0 0 -0 3.14159</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-        <link name='Wall_9'>
-          <pose>-0.026034 9.78875 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
       <model name='tanke_0'>
         <pose>-6.41052 5.49151 -0.1125 0 -0 -0.000981</pose>
         <scale>1 1 1</scale>
@@ -635,16 +607,6 @@
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='wall_racer'>
-        <pose>-8.69636 -16.8575 0.1 -1.48898 1.57079 -3.14159</pose>
-        <scale>1 1 1</scale>
-        <link name='base_link'>
-          <pose>-8.69636 -16.8575 0.1 -1.48898 1.57079 -3.14159</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.000298 -0.000493 0.007295 0.009797 0.003024 0</acceleration>
-          <wrench>23.8005 -39.3657 582.885 0 -0 0</wrench>
         </link>
       </model>
       <model name='zhangpeng_0'>
@@ -1700,57 +1662,6 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='wall_racer'>
-      <link name='base_link'>
-        <inertial>
-          <pose>-0 10.0341 9.97819 0 -0 0</pose>
-          <mass>79900.9</mass>
-          <inertia>
-            <ixx>5.32021e+06</ixx>
-            <ixy>1.01603e-12</ixy>
-            <ixz>5.68132e-13</ixz>
-            <iyy>2.67526e+06</iyy>
-            <iyz>4.18374e-11</iyz>
-            <izz>2.64548e+06</izz>
-          </inertia>
-        </inertial>
-        <collision name='base_link_collision'>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <scale>1 1 1</scale>
-              <uri>/home/emnavi/catkin_ws/src/wall_racer/meshes/base_link.STL</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='base_link_visual'>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <scale>1 1 1</scale>
-              <uri>/home/emnavi/catkin_ws/src/wall_racer/meshes/base_link.STL</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>0 0 0 0 -0 0</pose>
-    </model>
     <model name='tunnel_swarm'>
       <link name='base_link'>
         <inertial>
@@ -1770,7 +1681,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/emnavi/catkin_ws/src/tunnel_swarm/meshes/base_link.STL</uri>
+              <uri>/home/emnavi/X280_SIM/src/emnv_scene/urdf_models/tunnel_swarm/meshes/base_link.STL</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -1792,7 +1703,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/emnavi/catkin_ws/src/tunnel_swarm/meshes/base_link.STL</uri>
+              <uri>/home/emnavi/X280_SIM/src/emnv_scene/urdf_models/tunnel_swarm/meshes/base_link.STL</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1801,190 +1712,6 @@
         <kinematic>0</kinematic>
       </link>
       <pose>0 0 0 0 -0 0</pose>
-    </model>
-    <model name='racer_wall_8M'>
-      <pose>-0.236961 0.195778 0 0 -0 0</pose>
-      <link name='Wall_11'>
-        <collision name='Wall_11_Collision'>
-          <geometry>
-            <box>
-              <size>20 0.15 8</size>
-            </box>
-          </geometry>
-          <pose>0 0 4 0 -0 0</pose>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='Wall_11_Visual'>
-          <pose>0 0 4 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>20 0.15 8</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-            <ambient>1 1 1 1</ambient>
-          </material>
-          <meta>
-            <layer>0</layer>
-          </meta>
-        </visual>
-        <pose>-10.0471 0 0 0 -0 -1.57326</pose>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <link name='Wall_13'>
-        <collision name='Wall_13_Collision'>
-          <geometry>
-            <box>
-              <size>20 0.15 8</size>
-            </box>
-          </geometry>
-          <pose>0 0 4 0 -0 0</pose>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='Wall_13_Visual'>
-          <pose>0 0 4 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>20 0.15 8</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-            <ambient>1 1 1 1</ambient>
-          </material>
-          <meta>
-            <layer>0</layer>
-          </meta>
-        </visual>
-        <pose>10.0246 0 0 0 -0 -1.5708</pose>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <link name='Wall_15'>
-        <collision name='Wall_15_Collision'>
-          <geometry>
-            <box>
-              <size>20.2462 0.15 8</size>
-            </box>
-          </geometry>
-          <pose>0 0 4 0 -0 0</pose>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='Wall_15_Visual'>
-          <pose>0 0 4 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>20.2462 0.15 8</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-            <ambient>1 1 1 1</ambient>
-          </material>
-          <meta>
-            <layer>0</layer>
-          </meta>
-        </visual>
-        <pose>0.023678 -9.925 0 0 -0 3.14159</pose>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <link name='Wall_9'>
-        <collision name='Wall_9_Collision'>
-          <geometry>
-            <box>
-              <size>20.1972 0.15 8</size>
-            </box>
-          </geometry>
-          <pose>0 0 4 0 -0 0</pose>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='Wall_9_Visual'>
-          <pose>0 0 4 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>20.1972 0.15 8</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-            <ambient>1 1 1 1</ambient>
-          </material>
-          <meta>
-            <layer>0</layer>
-          </meta>
-        </visual>
-        <pose>0.001007 9.925 0 0 -0 0</pose>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
     </model>
     <light name='user_point_light_0' type='point'>
       <pose>-7.02428 -0.880974 1 0 -0 0</pose>
@@ -2778,7 +2505,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/emnavi/catkin_ws/src/SUIDAO/meshes/base_link.STL</uri>
+              <uri>/home/emnavi/X280_SIM/src/emnv_scene/urdf_models/SUIDAO/meshes/base_link.STL</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -2800,7 +2527,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/emnavi/catkin_ws/src/SUIDAO/meshes/base_link.STL</uri>
+              <uri>/home/emnavi/X280_SIM/src/emnv_scene/urdf_models/SUIDAO/meshes/base_link.STL</uri>
             </mesh>
           </geometry>
         </visual>

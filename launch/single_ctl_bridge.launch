@@ -5,7 +5,7 @@
     <!-- emnv_ctl_bridge configs -->
     <arg name = "vehicle" default = "iris"/>
     <arg name = "ID" default = "0"/>
-    <arg name = "takeoff_height" default = "1.1"/>
+    <arg name = "takeoff_height" default = "0.6"/>
     <!-- RATE,ATTI,POSY  -->
     <arg name = "ctrl_pub_level" default = "ATTI"/>
     <!-- RATE,ATTI,POSY  -->
