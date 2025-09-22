@@ -24,8 +24,8 @@
             <param name ="enable_vel_transpose_b2w" value="true"/>
             <param name ="enable_imu_dt_check" value="false"/>
             <param name ="drone_config_path" value="$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
-            <param name ="drone_name" value="iris_1"/>
-            <param name ="takeoff_height" value="2"/>
+            <param name ="drone_id" value="1"/>
+            <param name ="takeoff_height" value="1.0"/>
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
 
@@ -53,8 +53,8 @@
             <param name ="enable_vel_transpose_b2w" value="true"/>
             <param name ="enable_imu_dt_check" value="false"/>
             <param name ="drone_config_path" value="$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
-            <param name ="drone_name" value="iris_2"/>
-            <param name ="takeoff_height" value="1"/>
+            <param name ="drone_id" value="2"/>
+            <param name ="takeoff_height" value="1。0"/>
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
             <!--集群相对位置偏移-->
@@ -82,8 +82,8 @@
             <param name ="enable_vel_transpose_b2w" value="true"/>
             <param name ="enable_imu_dt_check" value="false"/>
             <param name ="drone_config_path" value="$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
-            <param name ="drone_name" value="iris_3"/>
-            <param name ="takeoff_height" value="1"/>
+            <param name ="drone_id" value="3"/>
+            <param name ="takeoff_height" value="1。0"/>
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
 
@@ -111,8 +111,8 @@
             <param name ="enable_vel_transpose_b2w" value="true"/>
             <param name ="enable_imu_dt_check" value="false"/>
             <param name ="drone_config_path" value="$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
-            <param name ="drone_name" value="iris_4"/>
-            <param name ="takeoff_height" value="4"/>
+            <param name ="drone_id" value="4"/>
+            <param name ="takeoff_height" value="1.0"/>
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
 
@@ -140,8 +140,8 @@
             <param name ="enable_vel_transpose_b2w" value="true"/>
             <param name ="enable_imu_dt_check" value="false"/>
             <param name ="drone_config_path" value="$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
-            <param name ="drone_name" value="iris_5"/>
-            <param name ="takeoff_height" value="$(arg takeoff_height)"/>
+            <param name ="drone_id" value="5"/>
+            <param name ="takeoff_height" value="1.0"/>
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
 
@@ -169,8 +169,8 @@
             <param name ="enable_vel_transpose_b2w" value="true"/>
             <param name ="enable_imu_dt_check" value="false"/>
             <param name ="drone_config_path" value="$(find emnv_ctl_bridge)/config/drone_gazebo_iris.yaml"/>
-            <param name ="drone_name" value="iris_6"/>
-            <param name ="takeoff_height" value="$(arg takeoff_height)"/>
+            <param name ="drone_id" value="6"/>
+            <param name ="takeoff_height" value="1.0"/>
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
 
