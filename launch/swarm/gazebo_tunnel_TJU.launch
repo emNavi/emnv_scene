@@ -21,7 +21,7 @@
     <group ns="iris_1">
             <arg name="ID" value="0"/>
             <arg name="ID_in_group" value="0"/>
-            <arg name="fcu_url" default="udp://:24540@localhost:34580"/>
+            <arg name="fcu_url" default="udp://:1454$(arg ID)@localhost:1455$(arg ID)"/>
         <include file="$(find emnv_scene)/launch/single_vehicle_spawn_xtd.launch">
             <arg name="x" value="-9.0"/>
             <arg name="y" default="0.0"/>
@@ -31,21 +31,12 @@
             <arg name="Y" value="0"/>
             <arg name="vehicle" value="iris"/>
             <arg name="sdf" value="iris_3d_lidar"/>
-            <arg name="mavlink_udp_port" value="18570"/>
-            <arg name="mavlink_tcp_port" value="4560"/>
+            <arg name="mavlink_udp_port" value="1857$(arg ID)"/>
+            <arg name="mavlink_tcp_port" value="456$(arg ID)"/>
             <arg name="ID" value="$(arg ID)"/>
             <arg name="ID_in_group" value="$(arg ID_in_group)"/>
         </include>
     </group>
-        <!-- MAVROS -->
-        <!-- <include file="$(find mavros)/launch/px4.launch">
-        <arg name="fcu_url" value="udp://:24540@localhost:34580"/>
-        <arg name="gcs_url" value="udp://:14556@192.168.8.192:14550"/>
-        <arg name="tgt_system" value="$(eval 0 + arg('ID'))"/>
-        <arg name="tgt_component" value="1"/>
-        (20,-14,0.2)  (13,0,0.2)
-        (-9.0,1.0,0.2)
-    </include> -->
 
     <!-- <group ns="iris_2">
             <arg name="ID" value="1"/>
@@ -118,7 +109,6 @@
             <arg name="sdf" value="iris_3d_lidar5"/>
             <arg name="mavlink_udp_port" value="1857$(arg ID)"/>
             <arg name="mavlink_tcp_port" value="456$(arg ID)"/>
-            <arg name="udp_gimbal_port" value="1303$(arg ID)"/>
             <arg name="ID" value="$(arg ID)"/>
             <arg name="ID_in_group" value="$(arg ID_in_group)"/>
         </include>
@@ -138,7 +128,6 @@
             <arg name="sdf" value="iris_3d_lidar6"/>
             <arg name="mavlink_udp_port" value="1857$(arg ID)"/>
             <arg name="mavlink_tcp_port" value="456$(arg ID)"/>
-            <arg name="udp_gimbal_port" value="1303$(arg ID)"/>
             <arg name="ID" value="$(arg ID)"/>
             <arg name="ID_in_group" value="$(arg ID_in_group)"/>
         </include>
@@ -147,6 +136,7 @@
     <!--(forest_TJU.world已包含)加载urdf文件，同济的5个墙壁障碍物-->
     <!-- <node name="spawn_model_1" pkg="gazebo_ros" type="spawn_model" output="screen" 
     args="-file $(find emnv_scene)/urdf_models/suidao_wall/urdf/suidao_wall.urdf -urdf -model suidao_wall" /> -->
+
     <!-- <node name="spawn_model_1" pkg="gazebo_ros" type="spawn_model" output="screen" 
     args="-file $(find emnv_scene)/urdf_models/forest_wall_1/urdf/forest_wall_1.urdf -urdf -model forest_wall_1" />
     <node name="spawn_model_2" pkg="gazebo_ros" type="spawn_model" output="screen" 

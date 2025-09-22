@@ -8,10 +8,10 @@
     <!-- <param name="use_sim_time" value="true"/> -->
     <!--集群初始位姿-->
     <arg name= "swarm_racer_flage" default="true"/>
-    <arg name = "racer_x_1" default = "2.0"/>   <arg name = "racer_y_1" default = "0.0"/>   <arg name = "racer_z_1" default = "0.0"/>
-    <arg name = "racer_x_2" default = "2.0"/>   <arg name = "racer_y_2" default = "0.0"/>   <arg name = "racer_z_2" default = "0.0"/>
-    <arg name = "racer_x_3" default = "-2.0"/>  <arg name = "racer_y_2" default = "0.0"/>   <arg name = "racer_z_3" default = "0.0"/>
-    <arg name = "racer_x_4" default = "0.0"/>   <arg name = "racer_y_4" default = "2.0"/>   <arg name = "racer_z_4" default = "0.0"/>
+    <arg name = "racer_x_1" default = "0.0"/>   <arg name = "racer_y_1" default = "0.0"/>   <arg name = "racer_z_1" default = "0.0"/>
+    <arg name = "racer_x_2" default = "0.0"/>   <arg name = "racer_y_2" default = "2.0"/>   <arg name = "racer_z_2" default = "0.0"/>
+    <arg name = "racer_x_3" default = "0.0"/>   <arg name = "racer_y_3" default = "-2.0"/>   <arg name = "racer_z_3" default = "0.0"/>
+    <arg name = "racer_x_4" default = "2.0"/>   <arg name = "racer_y_4" default = "0.0"/>   <arg name = "racer_z_4" default = "0.0"/>
 
     <group ns="iris_1">
     <param name = "use_sim_time" value="true"/>
@@ -29,9 +29,9 @@
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
 
-            <param name="racer_x" value="($arg racer_x_1)"/>	
-            <param name="racer_y" value="($arg racer_y_1)"/>
-            <param name="racer_z" value="($arg racer_z_1)"/>
+            <param name="racer_x" value="$(arg racer_x_1)"/>	
+            <param name="racer_y" value="$(arg racer_y_1)"/>
+            <param name="racer_z" value="$(arg racer_z_1)"/>
             <param name="swarm_racer_flage" value="$(arg swarm_racer_flage)"/>
         </node>
         <include file="$(find mavros)/launch/px4.launch" >
@@ -58,9 +58,9 @@
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
             <!--集群相对位置偏移-->
-            <param name="racer_x" value="($arg racer_x_1)"/>	
-            <param name="racer_y" value="($arg racer_y_1)"/>
-            <param name="racer_z" value="($arg racer_z_1)"/>
+            <param name="racer_x" value="$(arg racer_x_2)"/>	
+            <param name="racer_y" value="$(arg racer_y_2)"/>
+            <param name="racer_z" value="$(arg racer_z_2)"/>
             <param name="swarm_racer_flage" value="$(arg swarm_racer_flage)"/>
         </node>
         <include file="$(find mavros)/launch/px4.launch" >
@@ -87,9 +87,9 @@
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
 
-            <param name="racer_x" value="($arg racer_x_3)"/>	
-            <param name="racer_y" value="($arg racer_y_3)"/>
-            <param name="racer_z" value="($arg racer_z_3)"/>
+            <param name="racer_x" value="$(arg racer_x_3)"/>	
+            <param name="racer_y" value="$(arg racer_y_3)"/>
+            <param name="racer_z" value="$(arg racer_z_3)"/>
             <param name="swarm_racer_flage" value="$(arg swarm_racer_flage)"/>
         </node>
         <include file="$(find mavros)/launch/px4.launch" >
@@ -116,9 +116,9 @@
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
 
-            <param name="racer_x" value="($arg racer_x_4)"/>	
-            <param name="racer_y" value="($arg racer_y_4)"/>
-            <param name="racer_z" value="($arg racer_z_4)"/>
+            <param name="racer_x" value="$(arg racer_x_4)"/>	
+            <param name="racer_y" value="$(arg racer_y_4)"/>
+            <param name="racer_z" value="$(arg racer_z_4)"/>
             <param name="swarm_racer_flage" value="$(arg swarm_racer_flage)"/>
         </node>
         <include file="$(find mavros)/launch/px4.launch" >
@@ -145,9 +145,9 @@
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
 
-            <param name="racer_x" value="($arg racer_x_5)"/>	
-            <param name="racer_y" value="($arg racer_y_5)"/>
-            <param name="racer_z" value="($arg racer_z_5)"/>
+            <param name="racer_x" value="$(arg racer_x_5)"/>	
+            <param name="racer_y" value="$(arg racer_y_5)"/>
+            <param name="racer_z" value="$(arg racer_z_5)"/>
             <param name="swarm_racer_flage" value="$(arg swarm_racer_flage)"/>
         </node>
         <include file="$(find mavros)/launch/px4.launch" >
@@ -174,9 +174,9 @@
             <param name ="ctrl_pub_level" value="$(arg ctrl_pub_level)"/>
             <param name ="ctrl_mode" value="$(arg ctrl_mode)"/>
 
-            <param name="racer_x" value="($arg racer_x_6)"/>	
-            <param name="racer_y" value="($arg racer_y_6)"/>
-            <param name="racer_z" value="($arg racer_z_6)"/>
+            <param name="racer_x" value="$(arg racer_x_6)"/>	
+            <param name="racer_y" value="$(arg racer_y_6)"/>
+            <param name="racer_z" value="$(arg racer_z_6)"/>
             <param name="swarm_racer_flage" value="$(arg swarm_racer_flage)"/>
         </node>
         <include file="$(find mavros)/launch/px4.launch" >
