@@ -231,16 +231,6 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='SUIDAO'>
-        <pose>16.3761 1.79879 -0 0 1e-06 1.56734</pose>
-        <scale>1 1 1</scale>
-        <link name='base_link'>
-          <pose>16.3761 1.79879 -0 0 1e-06 1.56734</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>4.25609 1.65356 4.62387 1.64637 0.987276 -2.7005</acceleration>
-          <wrench>69968.9 27184.1 76015 0 -0 0</wrench>
-        </link>
-      </model>
       <model name='Tree 1'>
         <pose>-1.57344 5.30096 7.08389 -1.38853 0 0</pose>
         <scale>1 1 1</scale>
@@ -2485,57 +2475,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-    </model>
-    <model name='SUIDAO'>
-      <link name='base_link'>
-        <inertial>
-          <pose>-1.67103 -7.27633 2.14443 0 -0 0</pose>
-          <mass>16439.7</mass>
-          <inertia>
-            <ixx>169772</ixx>
-            <ixy>-14187.9</ixy>
-            <ixz>-2.71396e-12</ixz>
-            <iyy>18779.7</iyy>
-            <iyz>-9.3229e-12</iyz>
-            <izz>175034</izz>
-          </inertia>
-        </inertial>
-        <collision name='base_link_collision'>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <scale>1 1 1</scale>
-              <uri>/home/emnavi/X280_SIM/src/emnv_scene/urdf_models/SUIDAO/meshes/base_link.STL</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='base_link_visual'>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <scale>1 1 1</scale>
-              <uri>/home/emnavi/X280_SIM/src/emnv_scene/urdf_models/SUIDAO/meshes/base_link.STL</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>0 0 0 0 -0 0</pose>
     </model>
     <model name='Untitled2'>
       <pose>-1.18492 -10.2315 0 0 -0 0</pose>

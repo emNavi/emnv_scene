@@ -135,7 +135,7 @@
 
     <!--(forest_TJU.world已包含)加载urdf文件，同济的5个墙壁障碍物-->
     <!-- <node name="spawn_model_1" pkg="gazebo_ros" type="spawn_model" output="screen" 
-    args="-file $(find emnv_scene)/urdf_models/suidao_wall/urdf/suidao_wall.urdf -urdf -model suidao_wall" /> -->
+    args="-file $(find emnv_scene)/urdf_models/suidao/urdf/suidao.urdf -urdf -model suidao" /> -->
 
     <!-- <node name="spawn_model_1" pkg="gazebo_ros" type="spawn_model" output="screen" 
     args="-file $(find emnv_scene)/urdf_models/forest_wall_1/urdf/forest_wall_1.urdf -urdf -model forest_wall_1" />
